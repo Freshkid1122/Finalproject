@@ -22,7 +22,7 @@ const SigninforRider = () => {
     }
 
     const allData = { mail, password };
-    const url = "http://localhost:3000/signin/rider";
+    const url = "https://finalproject-1-0ed5.onrender.com/signin/rider";
 
     try {
       const res = await axios.post(url, allData);

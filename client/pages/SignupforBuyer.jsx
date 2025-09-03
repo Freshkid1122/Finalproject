@@ -27,7 +27,7 @@ const SignupforBuyer = () => {
       return;
     }
 
-    const url = "http://localhost:3000/signup/buyer";
+    const url = "https://finalproject-1-0ed5.onrender.com/signup/buyer";
     const allData = { name, mail, password };
 
     axios
