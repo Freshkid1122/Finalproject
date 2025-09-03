@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Body from '../components/Body'
 import Feature from '../components/Feature'
 import Near from '../components/Near'
-import Last from '../components/last'
+import Last from '../components/Last'
 
 
 
