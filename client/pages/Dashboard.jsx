@@ -10,6 +10,7 @@ const Dashboard = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const currentUser = getUser();
@@ -164,9 +165,33 @@ const Dashboard = () => {
 
   return (
     <div className="container-fluid min-vh-100 bg-light">
-      <div className="row flex-nowrap">
+      <div className="row">
+        {/* Mobile Overlay */}
+        {sidebarOpen && (
+          <div 
+            className="position-fixed w-100 h-100 bg-dark bg-opacity-50 d-lg-none" 
+            style={{ zIndex: 1040 }}
+            onClick={() => setSidebarOpen(false)}
+          ></div>
+        )}
+
         {/* Left Sidebar */}
-        <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-success d-flex flex-column align-items-center py-4 shadow-sm">
+        <div className={`col-auto bg-success d-flex flex-column align-items-center py-4 shadow-sm position-fixed position-lg-relative h-100 ${sidebarOpen ? 'd-block' : 'd-none d-lg-flex'}`} 
+             style={{ 
+               width: '280px', 
+               zIndex: 1050,
+               transition: 'all 0.3s ease-in-out'
+             }}>
+          {/* Close button for mobile */}
+          <div className="d-flex justify-content-end w-100 d-lg-none mb-3">
+            <button 
+              className="btn btn-link text-white p-0"
+              onClick={() => setSidebarOpen(false)}
+            >
+              <i className="bi bi-x-lg"></i>
+            </button>
+          </div>
+
           {/* Logo */}
           <div className="d-flex align-items-center mb-4">
             <div className="bg-danger text-white px-3 py-2 rounded me-2">
@@ -179,49 +204,49 @@ const Dashboard = () => {
             <li className="nav-item">
               <a href="#" className="nav-link text-white active" aria-current="page">
                 <i className="bi bi-house me-2"></i>
-                Dashboard
+                <span className="d-none d-lg-inline">Dashboard</span>
               </a>
             </li>
             <li>
               <a href="#" className="nav-link text-white">
                 <i className="bi bi-list-ul me-2"></i>
-                New Orders
+                <span className="d-none d-lg-inline">New Orders</span>
               </a>
             </li>
             <li>
               <a href="#" className="nav-link text-white">
                 <i className="bi bi-plus-circle me-2"></i>
-                Add Products
+                <span className="d-none d-lg-inline">Add Products</span>
               </a>
             </li>
             <li>
               <a href="#" className="nav-link text-white">
                 <i className="bi bi-graph-up me-2"></i>
-                Sales
+                <span className="d-none d-lg-inline">Sales</span>
               </a>
             </li>
             <li>
               <a href="#" className="nav-link text-white">
                 <i className="bi bi-people me-2"></i>
-                Customers
+                <span className="d-none d-lg-inline">Customers</span>
               </a>
             </li>
             <li>
               <a href="#" className="nav-link text-white">
                 <i className="bi bi-gear me-2"></i>
-                Settings
+                <span className="d-none d-lg-inline">Settings</span>
               </a>
             </li>
             <li>
               <a href="#" className="nav-link text-white">
                 <i className="bi bi-bell me-2"></i>
-                Notification
+                <span className="d-none d-lg-inline">Notification</span>
               </a>
             </li>
           </ul>
 
           {/* Bottom Section */}
-          <div className="mt-auto text-center">
+          <div className="mt-auto text-center d-none d-lg-block">
             <div className="text-white small">
               <div className="fw-bold">Bookit Bookstore</div>
               <div>info@bookit.com</div>
@@ -231,14 +256,24 @@ const Dashboard = () => {
         </div>
 
         {/* Main Content */}
-        <div className="col py-3">
+        <div className="col py-3" style={{ marginLeft: '0', paddingLeft: '15px' }}>
           {/* Top Header */}
-          <div className="d-flex justify-content-between align-items-center mb-4">
-            <div>
-              <h2 className="fw-bold">Hello {user?.name}, Welcome back</h2>
-            </div>
+          <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
             <div className="d-flex align-items-center">
-              <div className="input-group me-3" style={{ width: "300px" }}>
+              {/* Mobile hamburger menu */}
+              <button 
+                className="btn btn-outline-success me-3 d-lg-none"
+                onClick={() => setSidebarOpen(true)}
+              >
+                <i className="bi bi-list"></i>
+              </button>
+              <div>
+                <h2 className="fw-bold mb-0 d-none d-md-block">Hello {user?.name}, Welcome back</h2>
+                <h4 className="fw-bold mb-0 d-md-none">Welcome {user?.name}</h4>
+              </div>
+            </div>
+            <div className="d-flex align-items-center flex-wrap">
+              <div className="input-group me-3 d-none d-md-flex" style={{ width: "300px" }}>
                 <span className="input-group-text">
                   <i className="bi bi-search"></i>
                 </span>
@@ -250,66 +285,82 @@ const Dashboard = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
-              <div className="d-flex align-items-center me-3">
+              <div className="d-flex align-items-center me-3 d-none d-sm-flex">
                 <div className="rounded-circle bg-secondary d-flex align-items-center justify-content-center me-2" style={{ width: "40px", height: "40px" }}>
                   <i className="bi bi-person text-white"></i>
                 </div>
-            <div>
+                <div className="d-none d-md-block">
                   <div className="fw-bold">John Doe</div>
                   <small className="text-muted">Admin</small>
                 </div>
               </div>
               <button className="btn btn-outline-danger btn-sm" onClick={handleLogout}>
                 <i className="bi bi-box-arrow-right me-1"></i>
-                Logout
+                <span className="d-none d-sm-inline">Logout</span>
               </button>
             </div>
           </div>
 
+          {/* Mobile Search Bar */}
+          <div className="d-md-none mb-3">
+            <div className="input-group">
+              <span className="input-group-text">
+                <i className="bi bi-search"></i>
+              </span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+          </div>
+
           {/* KPI Cards */}
-          <div className="row g-4 mb-4">
-            <div className="col-md-4">
+          <div className="row g-3 g-md-4 mb-4">
+            <div className="col-12 col-sm-6 col-md-4">
               <div className="card shadow-sm border-0">
                 <div className="card-body">
                   <div className="d-flex justify-content-between align-items-center">
                     <div>
-                      <h6 className="text-muted">Total Orders Today</h6>
+                      <h6 className="text-muted small">Total Orders Today</h6>
                       <h3 className="mb-0">{totalOrdersToday}</h3>
                     </div>
                     <div className="text-center">
-                      <i className="bi bi-bag display-6 text-success"></i>
+                      <i className="bi bi-bag fs-2 text-success"></i>
                       <div className="small text-success">-50%</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-12 col-sm-6 col-md-4">
               <div className="card shadow-sm border-0">
                 <div className="card-body">
                   <div className="d-flex justify-content-between align-items-center">
                     <div>
-                      <h6 className="text-muted">Revenue Today</h6>
+                      <h6 className="text-muted small">Revenue Today</h6>
                       <h3 className="mb-0">₦{revenueToday.toLocaleString()}</h3>
                     </div>
                     <div className="text-center">
-                      <i className="bi bi-currency-exchange display-6 text-success"></i>
+                      <i className="bi bi-currency-exchange fs-2 text-success"></i>
                       <div className="small text-success">-50%</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-12 col-sm-6 col-md-4">
               <div className="card shadow-sm border-0">
                 <div className="card-body">
                   <div className="d-flex justify-content-between align-items-center">
                     <div>
-                      <h6 className="text-muted">Total Customers</h6>
+                      <h6 className="text-muted small">Total Customers</h6>
                       <h3 className="mb-0">{totalCustomers}</h3>
                     </div>
                     <div className="text-center">
-                      <i className="bi bi-people display-6 text-success"></i>
+                      <i className="bi bi-people fs-2 text-success"></i>
                       <div className="small text-success">-50%</div>
                     </div>
                   </div>
