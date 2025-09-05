@@ -22,7 +22,7 @@ const SigninforRestaurant = () => {
     }
 
     const allData = { mail, password };
-    const url = "https://finalproject-1-0ed5.onrender.com/signin/restaurant";
+    const url = "https://finalproject-3-4u24.onrender.com/signin/restaurant";
 
     try {
       const res = await axios.post(url, allData);

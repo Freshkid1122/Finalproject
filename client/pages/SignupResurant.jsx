@@ -43,7 +43,7 @@ const SignupResurant = () => {
     }
 
     try {
-      const url = "https://finalproject-1-0ed5.onrender.com/signup/restaurant";
+      const url = "https://finalproject-3-4u24.onrender.com/signup/restaurant";
       const response = await axios.post(url, formData);
       
       if (response.status === 201) {
