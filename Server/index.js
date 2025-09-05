@@ -10,7 +10,7 @@ const app = express();
 dotenv.config();
 app.use(cors({
   origin: 'https://finalproject-tan-seven.vercel.app',
-  credentials: true
+  credentials: true,
 }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
