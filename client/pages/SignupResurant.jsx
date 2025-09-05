@@ -216,7 +216,7 @@ const SignupResurant = () => {
                   width="20"
                   className="me-2"
                 />
-                Sign up with Google
+                Sign up with Gooogle
               </button>
             </div>
           </div>
