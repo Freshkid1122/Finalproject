@@ -8,7 +8,10 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 dotenv.config();
-app.use(cors());
+app.use(cors({
+  origin: 'https://finalproject-tan-seven.vercel.app',
+  credentials: true
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
