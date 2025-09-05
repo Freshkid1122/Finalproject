@@ -43,8 +43,14 @@ const SignupResurant = () => {
     }
 
     try {
-      const url = "https://finalproject-3-4u24.onrender.com/signup/restaurant";
-      const response = await axios.post(url, formData);
+      const response = await axios.post("http://localhost:3000/signup", {
+        mail: formData.mail,
+        ownerName: formData.ownerName,
+        phoneNumber: formData.phoneNumber,
+        restaurantName: formData.restaurantName,
+        address: formData.address,
+        password: formData.password
+      });
       
       if (response.status === 201) {
         showMessage(response.data.message || "Restaurant Account Created Successfully", "success");

@@ -22,16 +22,16 @@ const SigninforRestaurant = () => {
     }
 
     const allData = { mail, password };
-    const url = "https://finalproject-3-4u24.onrender.com/signin/restaurant";
+    const url = "http://localhost:3000/signin";
 
     try {
-      const res = await axios.post(url, allData);
-      if (res.status === 200) {
+      const response = await axios.post(url, allData);
+      if (response.status === 200) {
         // Store token and user info
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user", JSON.stringify(res.data.user));
-        localStorage.setItem("name", res.data.user.name);
-        localStorage.setItem("userType", res.data.user.userType);
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        localStorage.setItem("name", response.data.user.name);
+        localStorage.setItem("userType", response.data.user.userType);
         
         showMessage("Restaurant Signed In Successfully", "success");
         setTimeout(() => navigate("/dashboard"), 2000);

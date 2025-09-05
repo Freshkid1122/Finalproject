@@ -6,12 +6,11 @@ const BuyerDashboard = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-  // 6 specific food restaurants as requested
   const restaurants = [
     {
       id: "item7go",
       name: "Item7go",
-      image: "../src/assets/iten 7.jpeg",
+      image: "../src/assets/buyer.png",
       cuisine: "Mixed Cuisine",
       rating: 4.8,
       deliveryTime: "25-35 min",
@@ -21,7 +20,7 @@ const BuyerDashboard = () => {
     {
       id: "chicken-republic",
       name: "Chicken Republic",
-      image: "../src/assets/chicken republic.jpeg",
+      image: "../src/assets/buyer.png",
       cuisine: "Chicken & Fast Food",
       rating: 4.6,
       deliveryTime: "20-30 min",
@@ -31,7 +30,7 @@ const BuyerDashboard = () => {
     {
       id: "kfc",
       name: "KFC",
-      image: "../src/assets/kfc.jpeg",
+      image: "../src/assets/buyer.png",
       cuisine: "Fried Chicken",
       rating: 4.7,
       deliveryTime: "15-25 min",
@@ -41,7 +40,7 @@ const BuyerDashboard = () => {
     {
       id: "alata",
       name: "Alata",
-      image: "../src/assets/Alata.png",
+      image: "../src/assets/buyer.png",
       cuisine: "Local Nigerian",
       rating: 4.5,
       deliveryTime: "30-40 min",
@@ -51,7 +50,7 @@ const BuyerDashboard = () => {
     {
       id: "bite-more",
       name: "Bite More",
-      image: "../src/assets/bite mall.jpeg",
+      image: "../src/assets/buyer.png",
       cuisine: "International",
       rating: 4.4,
       deliveryTime: "25-35 min",
@@ -61,7 +60,7 @@ const BuyerDashboard = () => {
     {
       id: "brent-mall",
       name: "Brent Mall",
-      image: "../src/assets/brent.jpeg",
+      image: "../src/assets/buyer.png",
       cuisine: "Multi-Cuisine",
       rating: 4.3,
       deliveryTime: "35-45 min",
@@ -73,7 +72,7 @@ const BuyerDashboard = () => {
   useEffect(() => {
     const userData = getUser();
     if (!userData) {
-      navigate("/signin/buyer");
+      navigate("/Signin");
       return;
     }
     setUser(userData);
@@ -89,12 +88,14 @@ const BuyerDashboard = () => {
   };
 
   if (!user) {
-    console.log("No user found, redirecting...");
-    return <div>Loading...</div>;
+    return (
+      <div className="min-vh-100 d-flex align-items-center justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
   }
-
-  console.log("User found:", user);
-  console.log("Restaurants:", restaurants);
 
   return (
     <div className="min-vh-100 w-100" style={{ minHeight: '100vh', width: '100vw' }}>

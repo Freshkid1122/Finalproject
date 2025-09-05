@@ -28,40 +28,21 @@ const Signin = () => {
   }
 
   const allData = { mail, password, };
-  const url = "http://localhost:3000/signin";
-
   try {
-      const res = await axios.post(url, allData);
+      const res = await axios.post("http://localhost:3000/signin", allData);
       if (res.status === 200) {
-          // Store token and user info
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("user", JSON.stringify(res.data.user));
           localStorage.setItem("name", res.data.user.name);
           localStorage.setItem("userType", res.data.user.userType);
-          
           setMessage("User Signed In Successfully");
           setMessageType("success");
-          
-          // Redirect based on user type
-          const userType = res.data.user.userType;
-          let redirectPath = "/dashboard"; // default
-          
-          if (userType === "buyer") {
-            redirectPath = "/buyer-dashboard";
-          } else if (userType === "rider") {
-            redirectPath = "/rider-dashboard";
-          }
-          // restaurant users go to /dashboard (existing path)
-          
-          setTimeout(() => navigate(redirectPath), 2000);
+          setTimeout(() => navigate("/dashboard"), 2000);
       }
-    } catch (error) {
-        if (error.response && error.response.data && error.response.data.error) {
-            setMessage(error.response.data.error);
-        } else {
-            setMessage("An unexpected error occurred");
-        }
+    } catch {
+        setMessage("Invalid Credentials");
         setMessageType("error");
+        setTimeout(() => setMessage(""), 2000);
     } 
     
   }

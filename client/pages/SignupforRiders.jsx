@@ -43,8 +43,14 @@ const SignupforRiders = () => {
     }
 
     try {
-      const url = "https://finalproject-3-4u24.onrender.com/signup/rider";
-      const response = await axios.post(url, formData);
+      const response = await axios.post("http://localhost:3000/signup", {
+        name: formData.name,
+        phoneNumber: formData.phoneNumber,
+        mail: formData.mail,
+        vehicleType: formData.vehicleType,
+        plateNumber: formData.plateNumber,
+        password: formData.password
+      });
       
       if (response.status === 201) {
         showMessage(response.data.message || "Rider Account Created Successfully", "success");
