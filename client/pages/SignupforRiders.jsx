@@ -43,7 +43,7 @@ const SignupforRiders = () => {
     }
 
     try {
-      const url = "http://localhost:3000/signup/rider";
+      const url = "https://finalproject-3-4u24.onrender.com/signup/rider";
       const response = await axios.post(url, formData);
       
       if (response.status === 201) {
