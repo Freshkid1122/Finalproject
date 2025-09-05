@@ -22,7 +22,7 @@ const SigninforBuyer = () => {
     }
 
     const allData = { mail, password };
-    const url = "https://finalproject-3-4u24.onrender.com/signin";
+    const url = "http://localhost:3000/signin";
 
     try {
       const res = await axios.post(url, allData);

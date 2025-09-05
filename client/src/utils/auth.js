@@ -36,7 +36,8 @@ export const logout = () => {
   localStorage.removeItem('token');
   localStorage.removeItem('user');
   localStorage.removeItem('name');
-  window.location.href = '/Signin';
+  localStorage.removeItem('userType');
+  window.location.href = '/signin';
 };
 
 export const getAuthHeaders = () => {

@@ -35,7 +35,7 @@ const SignupforBuyer = () => {
       .then((res) => {
         if (res.status === 201) {
           showMessage(res.data.message || "Buyer Account Created Successfully", "success");
-          setTimeout(() => navigate("/Signin"), 2000);
+          setTimeout(() => navigate("/signin/buyer"), 2000);
         }
       })
       .catch((err) => {

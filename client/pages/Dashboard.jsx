@@ -14,7 +14,7 @@ const Dashboard = () => {
   useEffect(() => {
     const currentUser = getUser();
     if (!currentUser || currentUser.userType !== 'restaurant') {
-      navigate('/Signin');
+      navigate('/signin');
       return;
     }
     setUser(currentUser);
