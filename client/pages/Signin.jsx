@@ -15,8 +15,6 @@ const Signin = () => {
   const [messageType, setMessageType] = useState("");
 
 
-
-
   const Signin = async(e) => {
   e.preventDefault();
 
@@ -28,7 +26,7 @@ const Signin = () => {
   }
 
   const allData = { mail, password, };
-  const url = "http://localhost:3000/signin";
+  const url = "http://localhost:3000/signin/buyer";
 
   try {
       const res = await axios.post(url, allData);
@@ -42,26 +40,20 @@ const Signin = () => {
           setMessage("User Signed In Successfully");
           setMessageType("success");
           
-          // Redirect based on user type
-          const userType = res.data.user.userType;
-          let redirectPath = "/dashboard"; // default
-          
-          if (userType === "buyer") {
-            redirectPath = "/buyer-dashboard";
-          } else if (userType === "rider") {
-            redirectPath = "/rider-dashboard";
-          }
-          // restaurant users go to /dashboard (existing path)
-          
-          setTimeout(() => navigate(redirectPath), 2000);
+          // Redirect to buyer dashboard
+          setTimeout(() => navigate("/BuyerDashboard"), 1500);
       }
     } catch (error) {
+        console.error("Signin error:", error);
         if (error.response && error.response.data && error.response.data.error) {
             setMessage(error.response.data.error);
+        } else if (error.code === 'ECONNREFUSED') {
+            setMessage("Cannot connect to server. Please make sure the server is running.");
         } else {
             setMessage("An unexpected error occurred");
         }
         setMessageType("error");
+        setTimeout(() => setMessage(""), 3000);
     } 
     
   }
