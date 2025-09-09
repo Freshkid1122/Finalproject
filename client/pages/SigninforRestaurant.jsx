@@ -34,7 +34,7 @@ const SigninforRestaurant = () => {
         localStorage.setItem("userType", response.data.user.userType);
         
         showMessage("Restaurant Signed In Successfully", "success");
-        setTimeout(() => navigate("/dashboard"), 2000);
+        setTimeout(() => navigate("/resturant/dashboard"), 2000);
       }
     } catch (error) {
       console.log("Backend error:", error.response?.data);

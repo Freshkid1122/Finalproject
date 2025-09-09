@@ -34,7 +34,7 @@ function App() {
         <Route path="/signin/buyer" element={<SigninforBuyer/>} />
         <Route path="/signin/restaurant" element={<SigninforRestaurant/>} />
         <Route path="/signin/rider" element={<SigninforRider/>} />
-        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/resturant/dashboard" element={<Dashboard/>} />
         <Route path="/buyer-dashboard" element={<BuyerDashboard/>} />
         <Route path="/rider-dashboard" element={<RiderDashboard/>} />
         <Route path="/restaurant/:restaurantId" element={<RestaurantLanding/>} />

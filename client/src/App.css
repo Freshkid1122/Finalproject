@@ -46,28 +46,4 @@
   .w-lg-custom {
     width: 60% !important;
   }
-  }
-
-  /* Responsive styles for small screens */
-  @media (max-width: 600px) {
-    #root {
-      padding: 0.5rem;
-    }
-    .card {
-      padding: 1em;
-    }
-    .container {
-      flex-direction: column !important;
-      padding: 0 !important;
-    }
-    .row {
-      flex-direction: column !important;
-      width: 100% !important;
-      margin: 0 !important;
-    }
-    .col-12, .col-md-6 {
-      width: 100% !important;
-      padding: 0.5rem !important;
-    }
-  }
 }

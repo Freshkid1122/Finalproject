@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import './Dashboard.css';
+import { FaBars } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
 import { getUser, logout } from "../src/utils/auth";
+import Sidebar from '../components/Sidebar';
 
 const Dashboard = () => {
+
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  
+
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+    console.log('Sidebar visibility:', !isSidebarVisible);
+  };
+
+
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [orders, setOrders] = useState([]);
@@ -165,17 +178,30 @@ const Dashboard = () => {
   return (
     <div className="container-fluid min-vh-100 bg-light">
       <div className="row flex-nowrap">
+       <button
+            className="btn menu d-lg-none mb-2"
+            onClick={toggleSidebar}
+          >
+            <FaBars /> Menu
+          </button>
+        
         {/* Left Sidebar */}
-        <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-success d-flex flex-column align-items-center py-4 shadow-sm">
+        {/* <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-success d-flex flex-column align-items-center py-4 shadow-sm"> */}
           {/* Logo */}
-          <div className="d-flex align-items-center mb-4">
-            <div className="bg-danger text-white px-3 py-2 rounded me-2">
-              <strong>item7go</strong>
-            </div>
-          </div>
+
           
+
+
+
           {/* Navigation Menu */}
-          <ul className="nav nav-pills flex-column mb-auto mt-4 w-100">
+    <div
+  className={`col-lg-3 col-md-4 sidebar-container ${
+    isSidebarVisible ? 'd-block' : 'd-none d-lg-block'
+  }`}
+>
+
+
+          {/* <ul className="nav nav-pills flex-column mb-auto mt-4 w-100">
             <li className="nav-item">
               <a href="#" className="nav-link text-white active" aria-current="page">
                 <i className="bi bi-house me-2"></i>
@@ -218,17 +244,25 @@ const Dashboard = () => {
                 Notification
               </a>
             </li>
-          </ul>
+          </ul> */}
 
           {/* Bottom Section */}
-          <div className="mt-auto text-center">
+          {/* <div className="mt-auto text-center">
             <div className="text-white small">
               <div className="fw-bold">Bookit Bookstore</div>
               <div>info@bookit.com</div>
               <i className="bi bi-book text-white"></i>
             </div>
-          </div>
+          </div> */}
+          
+
+          <Sidebar />
+          
         </div>
+
+        {/* </div> */}
+
+
 
         {/* Main Content */}
         <div className="col py-3">
@@ -255,7 +289,7 @@ const Dashboard = () => {
                   <i className="bi bi-person text-white"></i>
                 </div>
             <div>
-                  <div className="fw-bold">John Doe</div>
+                  <div className="fw-bold">{user?.name}</div>
                   <small className="text-muted">Admin</small>
                 </div>
               </div>
