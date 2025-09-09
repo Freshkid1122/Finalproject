@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getUser } from "../src/utils/auth";
 import Ricef from "../src/assets/ricef.png";
 import Ricec from "../src/assets/richc.png";
-import Shawa from "../src/assets/Shawa.png";
+import Shawa from "../src/assets/shawa.png";
 import Ricem from "../src/assets/ricemade.png";
 import Youn from "../src/assets/youn.png";
 import Beef from "../src/assets/beef.png";
