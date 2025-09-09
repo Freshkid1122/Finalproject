@@ -1,6 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-import Bike from "../src/assets/Bike.jpg";
+import Bike from "../src/assets/bike.jpg";
 import Cook from "../src/assets/cook.jpg";
 
 
