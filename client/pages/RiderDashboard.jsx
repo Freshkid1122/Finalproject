@@ -8,13 +8,13 @@ const RiderDashboard = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [deliveries, setDeliveries] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [isAvailable, setIsAvailable] = useState(true);
 
   useEffect(() => {
     const currentUser = getUser();
     if (!currentUser || currentUser.userType !== 'rider') {
-      navigate('/Signin');
+      navigate('/rider-dashboard');
       return;
     }
     setUser(currentUser);
@@ -60,7 +60,7 @@ const RiderDashboard = () => {
     ];
     
     setDeliveries(mockDeliveries);
-    setLoading(false);
+    // setLoading(false);
   }, [navigate]);
 
   const handleLogout = () => {
@@ -129,15 +129,15 @@ const RiderDashboard = () => {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center">
-        <div className="spinner-border text-success" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center">
+  //       <div className="spinner-border text-success" role="status">
+  //         <span className="visually-hidden">Loading...</span>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="container-fluid">
