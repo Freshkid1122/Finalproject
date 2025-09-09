@@ -1,22 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import L from "../src/assets/L.jpg";
 
 const Navbar = () => {
   return (
     <>
       <div>
-      <div
-        className="vh-100 vw-100 d-flex flex-column justify-content-between"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://s3-alpha-sig.figma.com/img/f6ef/6a24/fa9a1ea339c755e7f6d8da6697d41a20?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=PZCra9VFKwi26Ly2xpEOnh0BQg4yHE7UH7I8pdQYQf2Vsbm8sN8Pjf5miUVpWnA6FEsKNmgbxkumB68EpdqD34iJsp~umZxzJbU3xOaIyHWuPJ9XBJ~OA59sr5mfI8kV17Di~VG1lCmPS6eyihuOnTICuR4GMKTFyZtWNT3k3-YRXSogRGZZzXwjhkDRPx45IVm6tZmObVGL~DPMFrHle~YNZLCEfQ~AMSDaQ36sqLoOdhy76ZuTmYtA8-300asYYZFAFvOSA1iXqvMgwfRpICm5~Sawfqbk3WTc3Y79F8kN6F8KoK40S7ws~rjSbuv-3HQLPMqgPe0dr52-LZOWKw__")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          color: 'white',
-          margin: 0,
-          padding: 0,
-          overflow: 'hidden',
-        }}
-      >
+     <div
+
+className="vh-100 vw-100 d-flex flex-column justify-content-between"
+  style={{
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${L})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: 'white',
+    margin: 0,
+    padding: 0,
+    overflow: 'hidden',
+  }}
+>
+  {/* ...existing code... */}
+
         {/* Navbar */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-transparent px-4 pt-3">
           <div className="container-fluid">
@@ -55,8 +59,9 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-      </div>
+
   
     </>
   )
