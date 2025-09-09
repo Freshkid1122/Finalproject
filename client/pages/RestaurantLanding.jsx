@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getUser } from "../src/utils/auth";
+import Ricef from "../src/assets/ricef.png";
+import Ricec from "../src/assets/richc.png";
+import Shawa from "../src/assets/Shawa.png";
+import Ricem from "../src/assets/ricemade.png";
+import Youn from "../src/assets/youn.png";
+import Beef from "../src/assets/beef.png";
+import Friedf from "../src/assets/friedf.png";
+
+
 
 const RestaurantLanding = () => {
   const { restaurantId } = useParams();
@@ -229,43 +238,43 @@ const RestaurantLanding = () => {
         <div className="row g-4">
           {[
             {
-              name: "Chicken shawarma",
-              image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop",
+              name: "Rice with chiken",
+              image: Ricec,
               price: "₦3,000.00",
               desc: "Classic Nigerian jollof rice with spicy grilled chicken.",
               restaurant: "Item7GO"
             },
             {
               name: "A plate of rice with fish",
-              image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=600&h=400&fit=crop",
+              image:Ricef,
               price: "₦3,000",
               desc: "Fried rice served with tender beef and veggies.",
               restaurant: "Chicken Republic"
             },
             {
               name: "Shawarma",
-              image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=600&h=400&fit=crop",
+              image: Shawa,
               price: "₦2,500",
               desc: "Delicious chicken shawarma with creamy sauce.",
               restaurant: "KFC"
             },
             {
               name: "A plate of rice with croaker fish",
-              image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=600&h=400&fit=crop",
+              image: Ricem,
               price: "₦2,800",
               desc: "Traditional spinach stew with assorted meat and swallow.",
               restaurant: "Alata"
             },
             {
-              name: "Grilled Fish & Plantain",
-              image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=600&h=400&fit=crop",
+              name: "Beef",
+          image: Beef,
               price: "₦4,000",
               desc: "Charcoal grilled fish served with sweet plantain.",
               restaurant: "Bite More"
             },
             {
-              name: "Maltina 330Ml Can",
-              image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=400&fit=crop",
+              name: "Fried Rice",
+              image: Friedf,
               price: "₦2,200",
               desc: "Juicy beef burger with crispy fries.",
               restaurant: "Brent Mall"
@@ -279,7 +288,7 @@ const RestaurantLanding = () => {
             },
             {
               name: "D-best Yogurt medium",
-              image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=600&h=400&fit=crop",
+              image: Youn,
               price: "₦2,000",
               desc: "Rich yam porridge with vegetables and fish.",
               restaurant: "Alata"
@@ -292,7 +301,7 @@ const RestaurantLanding = () => {
                     src={item.image}
                     className="card-img-top"
                     alt={item.name}
-                    style={{ height: '200px', objectFit: 'cover' }}
+                    style={{ height: '200px', objectFit: 'cover', width: '100%' }}
                   />
                 </div>
                 <div className="card-body d-flex flex-column">
@@ -358,14 +367,7 @@ const RestaurantLanding = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-6">
-            <img 
-              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=600&h=500&fit=crop"
-              alt="Noodle dish"
-              className="img-fluid rounded-circle shadow"
-              style={{ width: '500px', height: '500px', objectFit: 'cover' }}
-            />
-          </div>
+                
         </div>
       </div>
 
