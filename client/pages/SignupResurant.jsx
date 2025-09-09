@@ -43,7 +43,7 @@ const SignupResurant = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/signup/restaurant", {
+      const response = await axios.post("https://finalproject-4-7gpe.onrender.com/signup/restaurant", {
         mail: formData.mail,
         ownerName: formData.ownerName,
         phoneNumber: formData.phoneNumber,

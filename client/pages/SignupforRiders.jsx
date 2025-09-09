@@ -43,7 +43,7 @@ const SignupforRiders = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/signup", {
+      const response = await axios.post("https://finalproject-4-7gpe.onrender.com/signup", {
         name: formData.name,
         phoneNumber: formData.phoneNumber,
         mail: formData.mail,
