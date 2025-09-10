@@ -10,7 +10,7 @@ const Last = () => (
     bottom: 0,
     width: '100%',
   }}>
-    <p>© {new Date().getFullYear()} Adekunle Samuel Kayode . All rights reserved.</p>
+    <p>© {new Date().getFullYear()} On Demand . All rights reserved.</p>
   </footer>
 );
 
