@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUser, logout } from "../src/utils/auth";
+import Bite from "../src/assets/bite.jpeg";
+import Brent from "../src/assets/brent.jpeg";
+import Alate from "../src/assets/Alata.png";
+import Chicken from "../src/assets/chicken.jpeg";
+import Item from "../src/assets/iten.jpeg";
+import Kfc from "../src/assets/kfc.jpeg";
 
 const BuyerDashboard = () => {
   const navigate = useNavigate();
@@ -10,7 +16,7 @@ const BuyerDashboard = () => {
     {
       id: "item7go",
       name: "Item7go",
-      image: "../src/assets/buyer.png",
+      image: Item,
       cuisine: "Mixed Cuisine",
       rating: 4.8,
       deliveryTime: "25-35 min",
@@ -20,7 +26,7 @@ const BuyerDashboard = () => {
     {
       id: "chicken-republic",
       name: "Chicken Republic",
-      image: "../src/assets/buyer.png",
+      image: Chicken,
       cuisine: "Chicken & Fast Food",
       rating: 4.6,
       deliveryTime: "20-30 min",
@@ -30,7 +36,7 @@ const BuyerDashboard = () => {
     {
       id: "kfc",
       name: "KFC",
-      image: "../src/assets/buyer.png",
+      image: Kfc,
       cuisine: "Fried Chicken",
       rating: 4.7,
       deliveryTime: "15-25 min",
@@ -40,7 +46,7 @@ const BuyerDashboard = () => {
     {
       id: "alata",
       name: "Alata",
-      image: "../src/assets/buyer.png",
+      image: Alate,
       cuisine: "Local Nigerian",
       rating: 4.5,
       deliveryTime: "30-40 min",
@@ -50,7 +56,7 @@ const BuyerDashboard = () => {
     {
       id: "bite-more",
       name: "Bite More",
-      image: "../src/assets/buyer.png",
+      image: Bite,
       cuisine: "International",
       rating: 4.4,
       deliveryTime: "25-35 min",
@@ -60,7 +66,7 @@ const BuyerDashboard = () => {
     {
       id: "brent-mall",
       name: "Brent Mall",
-      image: "../src/assets/buyer.png",
+      image: Brent,
       cuisine: "Multi-Cuisine",
       rating: 4.3,
       deliveryTime: "35-45 min",
@@ -102,7 +108,7 @@ const BuyerDashboard = () => {
       {/* Header - Full Screen */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-success">
         <div className="container-fluid">
-          <a className="navbar-brand fw-bold fs-3" href="#">FoodHub</a>
+          <a className="navbar-brand fw-bold fs-3" href="#">Resturants</a>
           <div className="d-flex align-items-center">
             <span className="text-white me-4 fs-5">Welcome, {user.name}!</span>
             <button className="btn btn-outline-light btn-lg" onClick={handleLogout}>
@@ -151,7 +157,7 @@ const BuyerDashboard = () => {
                       height="120"
                       style={{ 
                         objectFit: 'cover',
-                        border: '4px solid #28a745'
+                        border: '4px solid #054815ff'
                       }}
                     />
                     <h3 className="fw-bold text-success mb-2">{restaurant.name}</h3>
