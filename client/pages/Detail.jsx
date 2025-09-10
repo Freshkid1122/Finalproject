@@ -82,7 +82,7 @@ const Detail = () => {
     // You can integrate with your cart logic here
     setCartMessage("Added to cart!");
     setTimeout(() => setCartMessage(""), 2000);
-  };
+  }; 
 
   const handlePayment = () => {
     // Integrate with your payment gateway here

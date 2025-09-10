@@ -6,22 +6,23 @@ import Cook from "../src/assets/cook.jpg";
 
 const Body = () => {
   return (
-    <>
+    <div className='container-fluid p-5' style={{ backgroundColor: "#fff9ee" }}>
       <div>
        
-      <div className="outer-container">
-        <div className='center-container'>
-            <div className="container-fluid py-5 center align-items-center justify-content-center" style={{ backgroundColor: "#fff9ee" }}>
-            <h3 className='mx-5'>Join Us Today</h3>
-      <div className="container">
+      <div className="">
+        <div className=''>
+            <div className="p-5 center align-items-center justify-content-center">
+      <div className="">
+            <h3 className='my-5 fs-1'>Join Us Today</h3>
         <div className="row align-items-center">
 
           {/* Left Image */}
-          <div className="col-md-6 mb-4 mb-md-0">
+          <div className="col-md-6 mb-4 ">
             <img
               src={Cook}
               alt="Chef cooking"
-              className=" name"
+              className=" name  "
+              
               
             />
           </div>
@@ -57,11 +58,11 @@ const Body = () => {
       </div>
       <div>
        
-      <div className="outer-container">
-        <div className='center-container'>
+      <div className="">
+        <div className=''>
 
-            <div className="container-fluid py-5 center align-items-center justify-content-center" style={{ backgroundColor: "#fff9ee" }}>
-      <div className="container">
+            <div className=" p-5 center align-items-center justify-content-center" >
+      <div className="">
         <div className="row align-items-center">
 
           {/* Left Image */}
@@ -93,7 +94,8 @@ const Body = () => {
             <img
               src={Bike}
               alt="Chef cooking"
-              className=" name"
+              className=" name "
+              
               
             />
           </div>
@@ -104,7 +106,7 @@ const Body = () => {
       </div>
       </div>
       </div>
-    </>
+    </div>
   )
 }
 
