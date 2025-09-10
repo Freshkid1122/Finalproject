@@ -8,7 +8,12 @@ import Ricem from "../src/assets/ricemade.png";
 import Youn from "../src/assets/youn.png";
 import Beef from "../src/assets/beef.png";
 import Friedf from "../src/assets/friedf.png";
-
+import Bite from "../src/assets/bite.jpeg";
+import Brent from "../src/assets/brent.jpeg";
+import Alate from "../src/assets/Alata.png";
+import Chicken from "../src/assets/chicken.jpeg";
+import Item from "../src/assets/iten.jpeg";
+import Kfc from "../src/assets/kfc.jpeg";
 
 
 const RestaurantLanding = () => {
@@ -21,7 +26,7 @@ const RestaurantLanding = () => {
   const restaurantData = {
     "item7go": {
       name: "Item7go",
-      heroImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=600&fit=crop",
+      Image:Item,
       description: "Where we serve yummy treats with the freshest ingredients and best flavors. Whether you're craving a quick bite, or a full-course meal, we've got something for everyone.",
       address: "125 Main Street, Las Vegas, NV.",
       phone: "+123456789",
@@ -32,7 +37,7 @@ const RestaurantLanding = () => {
     },
     "chicken-republic": {
       name: "Chicken Republic",
-      heroImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=1200&h=600&fit=crop",
+      Image: Chicken,
       description: "Serving the best chicken dishes with authentic recipes and premium ingredients. From crispy fried chicken to grilled specialties, we bring you the ultimate chicken experience.",
       address: "456 Chicken Lane, Lagos, NG.",
       phone: "+234567890",
@@ -42,9 +47,8 @@ const RestaurantLanding = () => {
       reviews: 201
     },
     "kfc": {
-      name: "KFC",
-      heroImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=1200&h=600&fit=crop",
-      description: "Finger Lickin' Good! The world's most popular chicken restaurant serving crispy fried chicken, burgers, and sides with our secret blend of herbs and spices.",
+      name: "KFC",   
+Image: Kfc ,      description: "Finger Lickin' Good! The world's most popular chicken restaurant serving crispy fried chicken, burgers, and sides with our secret blend of herbs and spices.",
       address: "789 KFC Street, Abuja, NG.",
       phone: "+234678901",
       hours: "Daily (7AM-12AM)",
@@ -55,8 +59,7 @@ const RestaurantLanding = () => {
     },
     "alata": {
       name: "Alata",
-      heroImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=1200&h=600&fit=crop",
-      description: "Authentic Nigerian cuisine made with love and tradition. Experience the rich flavors of local dishes prepared with fresh, locally-sourced ingredients.",
+      Image: Alate,      description: "Authentic Nigerian cuisine made with love and tradition. Experience the rich flavors of local dishes prepared with fresh, locally-sourced ingredients.",
       address: "321 Alata Road, Port Harcourt, NG.",
       phone: "+234789012",
       hours: "Daily (6AM-10PM)",
@@ -66,8 +69,7 @@ const RestaurantLanding = () => {
     },
     "bite-more": {
       name: "Bite More",
-      heroImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=1200&h=600&fit=crop",
-      description: "International cuisine that takes your taste buds on a global journey. From Asian fusion to Mediterranean delights, every bite is an adventure.",
+Image: Bite,      description: "International cuisine that takes your taste buds on a global journey. From Asian fusion to Mediterranean delights, every bite is an adventure.",
       address: "654 Bite Street, Calabar, NG.",
       phone: "+234890123",
       hours: "Daily (9AM-11PM)",
@@ -77,8 +79,7 @@ const RestaurantLanding = () => {
     },
     "brent-mall": {
       name: "Brent Mall",
-      heroImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=1200&h=600&fit=crop",
-      description: "A culinary destination offering diverse dining options under one roof. From fine dining to casual eateries, Brent Mall has something for every palate.",
+Image: Brent,      description: "A culinary destination offering diverse dining options under one roof. From fine dining to casual eateries, Brent Mall has something for every palate.",
       address: "987 Brent Avenue, Enugu, NG.",
       phone: "+234901234",
       hours: "Daily (10AM-10PM)",
@@ -135,7 +136,7 @@ const RestaurantLanding = () => {
       <div 
         className="position-relative text-white d-flex align-items-center justify-content-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${restaurant.heroImage})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${restaurant.Image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '100vh',

@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import L from "../src/assets/L.jpg";
+import Body from './Body';
+import Feature from './Feature';
+import Near from './Near';
+import Last from './Last';
 
 const Navbar = () => {
   return (
@@ -30,9 +34,9 @@ className="vh-100 vw-100 d-flex flex-column justify-content-between"
             </button>
             <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
               <ul className="navbar-nav gap-4">
-                <li className="nav-item"><a className="nav-link" href="#">Home</a></li>
+                <li className="nav-item"><a className="nav-link" href="#body" >Home</a></li>
                 <li className="nav-item"><a className="nav-link" href="#">About Us</a></li>
-                <li className="nav-item"><a className="nav-link" href="#">Restaurants</a></li>
+                <li className="nav-item"><a className="nav-link" href="#feature">Restaurants</a></li>
                 <li className="nav-item"><a className="nav-link" href="#">Contact Us</a></li>
               </ul>
             </div>
@@ -62,7 +66,16 @@ className="vh-100 vw-100 d-flex flex-column justify-content-between"
         </div>
       </div>
 
-  
+<section id="bodyy" >
+   <Body />
+</section>
+<section id="feature">
+      <Feature />
+</section>
+      <div className='container-fluid p-5'>
+        <Near />
+      </div>
+      <Last />
     </>
   )
 }

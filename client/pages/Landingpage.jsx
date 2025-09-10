@@ -11,12 +11,7 @@ const Landingpage = () => {
   return (
     <>
       <Navbar />
-      <Body />
-      <Feature />
-      <div className='container-fluid p-5'>
-        <Near />
-      </div>
-      <Last />
+     
     </>
   )
 }
