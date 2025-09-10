@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getUser } from "../src/utils/auth";
 import Ricef from "../src/assets/ricef.png";
 import Ricec from "../src/assets/richc.png";
@@ -233,7 +234,7 @@ Image: Brent,      description: "A culinary destination offering diverse dining 
       <div className="container-fluid py-5" style={{ minHeight: '100vh' }}>
         <div className="d-flex justify-content-between align-items-center mb-5">
           <h2 className="display-3 fw-bold">Our Menu</h2>
-          <button className="btn btn-outline-secondary btn-lg">View All</button>
+
         </div>
         
         <div className="row g-4">
@@ -315,7 +316,14 @@ Image: Brent,      description: "A culinary destination offering diverse dining 
                   <p className="text-muted mb-1">{item.restaurant}</p>
                   <p className="text-muted mb-3">{item.desc}</p>
                   <div className="d-flex justify-content-between align-items-center mt-auto">
-                    <a href="#" className="text-decoration-none">View Details →</a>
+                  <div className="d-flex justify-content-between align-items-center mt-auto">
+  <Link to={`/detail/${idx}`} className="btn btn-success w-100">
+    View Details
+  </Link>
+  <button className="btn btn-sm" style={{ backgroundColor: '#8B4513', color: 'white' }}>
+    <i className="bi bi-cart"></i>
+  </button>
+</div>
                     <button className="btn btn-sm" style={{ backgroundColor: '#8B4513', color: 'white' }}>
                       <i className="bi bi-cart"></i>
                     </button>

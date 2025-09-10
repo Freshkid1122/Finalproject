@@ -13,6 +13,8 @@ import Dashboard from "../pages/Dashboard"
 import BuyerDashboard from "../pages/BuyerDashboard"
 import RiderDashboard from "../pages/RiderDashboard"
 import RestaurantLanding from "../pages/RestaurantLanding"
+import Detail from "../pages/Detail"
+import AddChart from "../pages/Addchart"
 
 
 
@@ -38,6 +40,9 @@ function App() {
         <Route path="/buyer-dashboard" element={<BuyerDashboard/>} />
         <Route path="/rider-dashboard" element={<RiderDashboard/>} />
         <Route path="/restaurant/:restaurantId" element={<RestaurantLanding/>} />
+        <Route path="/detail/:id" element={< Detail/>} />
+         <Route path="/Addchart/:id" element={< AddChart/>} />
+      
       </Routes>
 
 
