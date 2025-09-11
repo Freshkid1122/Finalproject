@@ -15,6 +15,9 @@ import RiderDashboard from "../pages/RiderDashboard"
 import RestaurantLanding from "../pages/RestaurantLanding"
 import Detail from "../pages/Detail"
 import AddChart from "../pages/Addchart"
+import Checkout from "../pages/Checkout"
+import PaymentDetails from "../pages/PaymentDetails"; // Import PaymentDetails
+import OrderConfirmation from "../pages/OrderConfirmation"; // Import OrderConfirmation
 
 
 
@@ -41,7 +44,10 @@ function App() {
         <Route path="/rider-dashboard" element={<RiderDashboard/>} />
         <Route path="/restaurant/:restaurantId" element={<RestaurantLanding/>} />
         <Route path="/detail/:id" element={< Detail/>} />
-         <Route path="/Addchart/:id" element={< AddChart/>} />
+         <Route path="/Addchart" element={< AddChart/>} />
+         <Route path="/checkout" element={< Checkout/>} />
+         <Route path="/payment-details" element={<PaymentDetails />} /> {/* New route for Payment Details */}
+         <Route path="/order-confirmation" element={<OrderConfirmation />} /> {/* New route for Order Confirmation */}
       
       </Routes>
 

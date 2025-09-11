@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa'; // Import FaTimes
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const Dashboard = () => {
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
-    console.log('Sidebar visibility:', !isSidebarVisible);
+    // console.log('Sidebar visibility:', !isSidebarVisible);
   };
 
 
@@ -179,10 +179,10 @@ const Dashboard = () => {
     <div className="container-fluid min-vh-100 bg-light">
       <div className="row flex-nowrap">
        <button
-            className="btn menu d-lg-none mb-2"
+            className="btn menu d-lg-none mb-2 position-fixed top-0 start-0 m-3 z-1050"
             onClick={toggleSidebar}
           >
-            <FaBars /> Menu
+            {isSidebarVisible ? <FaTimes /> : <FaBars />} Menu
           </button>
         
         {/* Left Sidebar */}
@@ -195,9 +195,8 @@ const Dashboard = () => {
 
           {/* Navigation Menu */}
     <div
-  className={`col-lg-3 col-md-4 sidebar-container ${
-    isSidebarVisible ? 'd-block' : 'd-none d-lg-block'
-  }`}
+  className={`col-lg-3 col-md-4 sidebar-container ${isSidebarVisible ? 'show' : ''}`}
+  style={{ zIndex: 1040 }} // Ensure sidebar is above overlay
 >
 
 
@@ -259,6 +258,9 @@ const Dashboard = () => {
           <Sidebar />
           
         </div>
+
+        {/* Overlay for mobile sidebar */}
+        {isSidebarVisible && <div className="overlay d-lg-none" onClick={toggleSidebar} style={{ zIndex: 1030 }}></div>}
 
         {/* </div> */}
 

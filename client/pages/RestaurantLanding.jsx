@@ -15,6 +15,7 @@ import Alate from "../src/assets/Alata.png";
 import Chicken from "../src/assets/chicken.jpeg";
 import Item from "../src/assets/iten.jpeg";
 import Kfc from "../src/assets/kfc.jpeg";
+import { FaBars, FaTimes } from 'react-icons/fa'; // Import FaBars and FaTimes
 
 
 const RestaurantLanding = () => {
@@ -22,6 +23,7 @@ const RestaurantLanding = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [restaurant, setRestaurant] = useState(null);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false); // State for navbar toggle
 
   // Restaurant data based on the ID
   const restaurantData = {
@@ -120,15 +122,29 @@ Image: Brent,      description: "A culinary destination offering diverse dining 
       <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#1e3a8a' }}>
         <div className="container-fluid">
           <a className="navbar-brand text-success fw-bold" href="#">logo</a>
-          <div className="navbar-nav ms-auto">
-            <a className="nav-link" href="#">Home</a>
-            <a className="nav-link" href="#">About Us</a>
-            <a className="nav-link" href="#">Menu</a>
-            <a className="nav-link" href="#">Contact Us</a>
-          </div>
-          <div className="d-flex align-items-center ms-3">
-            <i className="bi bi-search text-white me-3" style={{ fontSize: '1.2rem' }}></i>
-            <i className="bi bi-person-circle text-white" style={{ fontSize: '1.5rem' }}></i>
+          {/* Navbar Toggler Button */}
+          <button 
+            className="navbar-toggler"
+            type="button"
+            onClick={() => setIsNavbarOpen(!isNavbarOpen)}
+            aria-controls="navbarNav"
+            aria-expanded={isNavbarOpen ? "true" : "false"}
+            aria-label="Toggle navigation"
+          >
+            {isNavbarOpen ? <FaTimes /> : <FaBars />}
+          </button>
+          
+          <div className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`} id="navbarNav">
+            <div className="navbar-nav ms-auto">
+              <a className="nav-link" href="#">Home</a>
+              <a className="nav-link" href="#">About Us</a>
+              <a className="nav-link" href="#">Menu</a>
+              <a className="nav-link" href="#">Contact Us</a>
+            </div>
+            <div className="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+              <i className="bi bi-search text-white me-3" style={{ fontSize: '1.2rem' }}></i>
+              <i className="bi bi-person-circle text-white" style={{ fontSize: '1.5rem' }}></i>
+            </div>
           </div>
         </div>
       </nav>

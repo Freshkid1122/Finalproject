@@ -13,7 +13,7 @@ const Body = () => {
         <div className=''>
             <div className="p-5 center align-items-center justify-content-center">
       <div className="">
-            <h3 className='my-5 fs-1'>Join Us Today</h3>
+            <h3 className='my-5 fs-3'>Join Us Today</h3>
         <div className="row align-items-center">
 
           {/* Left Image */}
@@ -21,7 +21,7 @@ const Body = () => {
             <img
               src={Cook}
               alt="Chef cooking"
-              className=" name  "
+              className=" responsive-image  "
               
               
             />
@@ -94,7 +94,7 @@ const Body = () => {
             <img
               src={Bike}
               alt="Chef cooking"
-              className=" name "
+              className=" responsive-image "
               
               
             />

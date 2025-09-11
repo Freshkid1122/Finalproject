@@ -28,7 +28,7 @@ className="vh-100 vw-100 d-flex flex-column justify-content-between"
         {/* Navbar */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-transparent px-4 pt-3">
           <div className="container-fluid">
-            <a className="navbar-brand text-success fw-bold fs-1" href="#">logo</a>
+            <a className="navbar-brand text-success fw-bold fs-4" href="#">logo</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -48,12 +48,12 @@ className="vh-100 vw-100 d-flex flex-column justify-content-between"
         </nav>
 
         {/* Hero Content */}
-        <div className="container-fluid px-4 mb-5" style={{position:'relative', bottom:'50px'}}>
+        <div className="container-fluid px-4 mb-5">
           <div className="row pt-5">
             <div className="col-md-8 bg-dark  bg-opacity-50 p-5 rounded" style={{height:'50vh'}}>
-              <h1 className="display-5 fw-bold"style={{fontSize:'70px'}}>Craving Your Favorite Food?</h1>
-              <h2 className="h1" style={{fontSize:'50px'}}>Get It Delivered Fast</h2>
-              <p className="mt-3"style={{fontSize:'20px'}}>
+              <h1 className="display-5 fw-bold">Craving Your Favorite Food?</h1>
+              <h2 className="h1">Get It Delivered Fast</h2>
+              <p className="mt-3">
                 Order from top restaurants near you and have it delivered to your doorstep in minutes!<br />
                 Restaurants & riders, sign up and start earning today.
               </p>

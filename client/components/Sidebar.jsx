@@ -1,17 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
  import './Sidebar.css';
-import { Link } from 'react-router-dom';
-import {FaTachometerAlt, FaUser, FaTasks, FaFileAlt, FaChartBar, FaUsers, FaBook, FaCog, FaSignOutAlt,  } from "react-icons/fa";
+import { Link } from 'react-router-dom'
+import { FaTachometerAlt, FaUser, FaTasks, FaFileAlt, FaChartBar, FaUsers, FaBook, FaCog, FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
 
 const Sidebar = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
+
   return (
     <div>
-         <nav className="sidebar p-2 border-end sidebar-content">
+      {/* Toggle Button for mobile */}
+      <button className="btn btn-primary d-md-none m-3" onClick={toggleSidebar}>
+        {showSidebar ? <FaTimes /> : <FaBars />}
+      </button>
+
+         <nav className={`sidebar p-2 border-end sidebar-content ${showSidebar ? 'show' : ''}`}>
                 <ul className="nav flex-column mt-2">
                   <li className="nav-item">
                     <Link to="/resturant/dashboard">
               <a href="#" className="nav-link text-white active" aria-current="page">
-                <i className="bi bi-house me-2"></i>
+                <FaTachometerAlt className="me-2"/>
                 Dashboard
               </a>
               </Link>
@@ -19,7 +30,7 @@ const Sidebar = () => {
             <li>
               <Link to="/resturant/dashboard">
               <a href="#" className="nav-link text-white">
-                <i className="bi bi-list-ul me-2"></i>
+                <FaTasks className="me-2"/>
                 New Orders
               </a>
               </Link>
@@ -27,7 +38,7 @@ const Sidebar = () => {
             <li>
               <Link to="/resturant/dashboard">
               <a href="#" className="nav-link text-white">
-                <i className="bi bi-plus-circle me-2"></i>
+                <FaFileAlt className="me-2"/>
                 Add Products
               </a>
               </Link>
@@ -35,7 +46,7 @@ const Sidebar = () => {
             <li>
               <Link to="/resturant/dashboard">
               <a href="#" className="nav-link text-white">
-                <i className="bi bi-graph-up me-2"></i>
+                <FaChartBar className="me-2"/>
                 Sales
               </a>
               </Link>
@@ -43,7 +54,7 @@ const Sidebar = () => {
             <li>
               <Link to="/resturant/dashboard">
               <a href="#" className="nav-link text-white">
-                <i className="bi bi-people me-2"></i>
+                <FaUsers className="me-2"/>
                 Customers
               </a>
               </Link>
@@ -51,7 +62,7 @@ const Sidebar = () => {
             <li>
               <Link to="/resturant/dashboard">
               <a href="#" className="nav-link text-white">
-                <i className="bi bi-gear me-2"></i>
+                <FaCog className="me-2"/>
                 Settings
               </a>
               </Link>
@@ -59,7 +70,7 @@ const Sidebar = () => {
             <li>
               <Link to="/resturant/dashboard">
               <a href="#" className="nav-link text-white">
-                <i className="bi bi-bell me-2"></i>
+                <FaBook className="me-2"/>
                 Notification
               </a>
               </Link>
@@ -74,7 +85,7 @@ const Sidebar = () => {
             <div className="text-white small">
               <div className="fw-bold text-dark">Bookit Bookstore</div>
               <div className='text-dark'>info@bookit.com</div>
-              <i className="bi bi-book text-white text-dark "></i>
+              <FaBook className="text-white text-dark "/>
             </div>
           </div>
               </nav>

@@ -17,12 +17,12 @@ const Feature = () => {
   return (
     <>
       <div className='body'>
-        <div className='container'>
+        <div className='container-fluid' style={{ paddingLeft: '3rem', paddingRight: '3rem' }}>
           <div className='row '>
             <div className='col-md-4 col-6 my-2'>
               <div>
                 <div className="card" >
-                  <img src={richc} class="card-img-top" alt="..." />
+                  <img src={richc} class="card-img-top feature-card-image" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">Item7go</h5>
                     <FaLocationDot /> Isale General
@@ -30,7 +30,7 @@ const Feature = () => {
                     <PiBowlFoodLight /> A plate of rice with Chicken
                     <br />
                     <IoMdPricetags /> #3,000
-                    <p className='d-flex max-w-[50%] my-2 gap-2'>
+                    <p className='d-flex my-2 gap-2'>
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
@@ -46,7 +46,7 @@ const Feature = () => {
             <div className='col-md-4 col-6 my-2'>
               <div>
                 <div className="card" >
-                  <img src={beef} class="card-img-top" alt="..." />
+                  <img src={beef} class="card-img-top feature-card-image" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">Item7go</h5>
                     <FaLocationDot /> Isale General
@@ -54,7 +54,7 @@ const Feature = () => {
                     <PiBowlFoodLight /> A plate of rice with beef
                     <br />
                     <IoMdPricetags /> #2,000
-                    <p className='d-flex max-w-[50%] my-2 gap-2'>
+                    <p className='d-flex my-2 gap-2'>
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
@@ -70,7 +70,7 @@ const Feature = () => {
             <div className='col-md-4 col-6 my-2'>
               <div>
                 <div className="card" >
-                  <img src={friedf} class="card-img-top" alt="..." />
+                  <img src={friedf} class="card-img-top feature-card-image" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">Item7go</h5>
                     <FaLocationDot /> Isale General
@@ -78,7 +78,7 @@ const Feature = () => {
                     <PiBowlFoodLight /> A plate of rice with croaker fish
                     <br />
                     <IoMdPricetags /> #3,800
-                    <p className='d-flex max-w-[50%] my-2 gap-2'>
+                    <p className='d-flex my-2 gap-2'>
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
@@ -94,7 +94,7 @@ const Feature = () => {
             <div className='col-md-4 col-6 my-2'>
               <div>
                 <div className="card" >
-                  <img src={ricef} class="card-img-top" alt="..." />
+                  <img src={ricef} class="card-img-top feature-card-image" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">Item7go</h5>
                     <FaLocationDot /> Isale General
@@ -102,7 +102,7 @@ const Feature = () => {
                     <PiBowlFoodLight /> A plate of rice with fish
                     <br />
                     <IoMdPricetags /> #2,800
-                    <p className='d-flex max-w-[50%] my-2 gap-2'>
+                    <p className='d-flex my-2 gap-2'>
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
@@ -118,7 +118,7 @@ const Feature = () => {
             <div className='col-md-4 col-6 my-2'>
               <div>
                 <div className="card" >
-                  <img src={youn} class="card-img-top" alt="..." />
+                  <img src={youn} class="card-img-top feature-card-image" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">Item7go</h5>
                     <FaLocationDot /> Isale General
@@ -126,7 +126,7 @@ const Feature = () => {
                     <PiBowlFoodLight /> Vanilla Yoghurt
                     <br />
                     <IoMdPricetags /> #2,200
-                    <p className='d-flex max-w-[50%] my-2 gap-2'>
+                    <p className='d-flex my-2 gap-2'>
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
@@ -142,7 +142,7 @@ const Feature = () => {
             <div className='col-md-4 col-6 my-2'>
               <div>
                 <div className="card" >
-                  <img src={shawa} class="card-img-top" alt="..." />
+                  <img src={shawa} class="card-img-top feature-card-image" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">Item7go</h5>
                     <FaLocationDot /> Isale General
@@ -150,7 +150,7 @@ const Feature = () => {
                     <PiBowlFoodLight /> Chicken shawarma
                     <br />
                     <IoMdPricetags /> #3,000
-                    <p className='d-flex max-w-[50%] my-2 gap-2'>
+                    <p className='d-flex my-2 gap-2'>
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
                       <FaStar className='fs-5 text-warning' />
