@@ -40,10 +40,10 @@ const PaymentDetails = () => {
 
   return (
     <div className="container py-5 min-vh-100">
-      <div className="d-flex justify-content-center mb-5">
-        <h4 className="text-success me-3">1 Shopping Cart →</h4>
-        <h4 className="text-success me-3">2 Delivery/Payment →</h4>
-        <h4 className="text-muted">3 Order Completed</h4>
+      <div className="d-flex justify-content-center flex-wrap mb-5">
+        <h4 className="text-success me-1 me-md-3 fs-6 fs-md-4 text-center">1 Shopping Cart →</h4>
+        <h4 className="text-success me-1 me-md-3 fs-6 fs-md-4 text-center">2 Delivery/Payment →</h4>
+        <h4 className="text-muted fs-6 fs-md-4 text-center">3 Order Completed</h4>
       </div>
 
       <div className="card shadow w-100 border-0 p-4">

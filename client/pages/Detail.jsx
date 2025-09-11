@@ -92,9 +92,7 @@ const Detail = () => {
     navigate("/Addchart"); // Navigate to cart page after adding
   };
 
-  const handlePayment = () => {
-    navigate("/checkout"); // Navigate to checkout page
-  };
+  // Removed handlePayment function as Buy Now button is removed
 
   return (
   <div className="container-fluid min-vh-100 bg-light p-0">
@@ -154,9 +152,6 @@ const Detail = () => {
               <div className="d-flex flex-column flex-md-row gap-3 mt-4">
                 <button className="btn btn-success btn-lg" onClick={handleAddToCart}>
                   Add to Cart
-                </button>
-                <button className="btn btn-primary btn-lg" onClick={handlePayment}>
-                  Buy Now
                 </button>
               </div>
               {message && (
